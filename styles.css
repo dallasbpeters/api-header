@@ -8,19 +8,15 @@ body {
   display: flex;
   flex-direction: column;
   padding: 24px 24px 0 24px;
-  border-bottom: solid 3px rgb(10 105 241);
+  border-bottom: solid 4px rgb(10 105 241);
   transition: transform 0.5s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 .brand-header--logo-menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
-}
-
-.menu-icon {
-  height: 24px;
-  width: 24px;
 }
 
 .brand-header--list {
@@ -51,6 +47,20 @@ body {
   padding-bottom: 24px;
 }
 
+.menu-icon-wrapper {
+  height: 24px;
+  width: 24px;
+}
+.menu-icon-wrapper img.expanded {
+  display: none;
+}
+.menu-icon-wrapper.expanded img.closed {
+  display: none;
+}
+.menu-icon-wrapper.expanded img.expanded {
+  display: unset;
+}
+
 @media (min-width: 768px) {
   .brand-header {
     flex-direction: row;
@@ -60,7 +70,7 @@ body {
   .brand-header--logo-menu {
     margin: 0;
   }
-  .menu-icon {
+  .menu-icon-wrapper {
     display: none;
   }
   .brand-header--logo-link {
@@ -80,5 +90,10 @@ body {
   }
   .brand-header--list-item-link {
     padding: 0 6px;
+  }
+  .brand-header--nav.expanded {
+    max-height: unset;
+    transform: translate(0, 0%);
+    padding-bottom: 0;
   }
 }
